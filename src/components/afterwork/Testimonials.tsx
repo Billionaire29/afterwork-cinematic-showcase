@@ -1,33 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
-type T = { quote: string; name: string; role: string; gradient: string };
+type T = { quote: string; name: string; role: string };
 
 const items: T[] = [
   {
     quote: "They built our NGO website with soul — it actually represents what we stand for. The animations, the warmth, everything. Truly exceptional.",
     name: "Mr. Ram",
     role: "Jeevan Ki Nai Shuruaat NGO",
-    gradient: "linear-gradient(135deg,#C6F135,#3a7a1f)",
   },
   {
     quote: "Afterwork doesn't just build websites — they build experiences. Our conversion rate doubled after the redesign.",
     name: "Prince",
     role: "Founder, Startives",
-    gradient: "linear-gradient(135deg,#7dd3fc,#1e3a8a)",
   },
   {
     quote: "Working with the team was seamless. They understood our vision without us explaining twice. Delivered before deadline too.",
     name: "Sumit",
     role: "Co-founder, Apives",
-    gradient: "linear-gradient(135deg,#fbbf24,#b45309)",
   },
   {
     quote: "The attention to detail is unreal. Every hover, every animation — it feels premium. Our clients notice it immediately.",
     name: "Ankit",
     role: "CEO, Ladamark",
-    gradient: "linear-gradient(135deg,#f472b6,#7c2d12)",
   },
 ];
 
@@ -60,11 +56,6 @@ export const Testimonials = () => {
 
   return (
     <section className="relative py-28 md:py-36 border-t border-white/5 overflow-hidden">
-      {/* decorative wireframe globe */}
-      <div className="absolute -top-24 -right-24 w-[420px] h-[420px] opacity-[0.08] pointer-events-none rotate-slow">
-        <Globe className="w-full h-full" strokeWidth={0.4} color="#C6F135" />
-      </div>
-
       <div className="container relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
@@ -115,15 +106,9 @@ export const Testimonials = () => {
               <p className="font-display-light italic text-white/85 leading-relaxed" style={{ fontSize: 15 }}>
                 "{t.quote}"
               </p>
-              <div className="flex items-center gap-3 mt-7 pt-5 border-t border-white/10">
-                <div
-                  className="w-11 h-11 rounded-full shrink-0 border border-white/10"
-                  style={{ background: t.gradient }}
-                />
-                <div>
-                  <div className="font-display text-white text-sm">{t.name}</div>
-                  <div className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-white/50 mt-0.5">{t.role}</div>
-                </div>
+              <div className="mt-7 pt-5 border-t border-white/10">
+                <div className="font-display text-white text-base">{t.name}</div>
+                <div className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-lime mt-1.5">{t.role}</div>
               </div>
             </motion.article>
           ))}

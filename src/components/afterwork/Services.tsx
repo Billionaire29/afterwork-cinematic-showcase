@@ -71,11 +71,11 @@ export const Services = () => {
               </div>
               <h3 className="font-display t-card-title text-white mt-10">{title}</h3>
               <p className="text-white/55 mt-3 max-w-md leading-relaxed t-card-body font-mono-ui">{desc}</p>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="inline-flex items-center gap-2 text-lime font-mono-ui t-label group-hover:gap-3 transition-all">
-                  Read More <ArrowUpRight size={12} />
+              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
+                <div className="inline-flex items-center gap-1.5 text-lime font-mono-ui text-[10px] tracking-[0.15em] uppercase group-hover:gap-2.5 transition-all">
+                  Read More <ArrowUpRight size={11} />
                 </div>
-                <span className="font-mono-ui text-[11px] tracking-[0.15em] uppercase text-lime/70 inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1">
+                <span className="font-mono-ui text-[9px] tracking-[0.15em] uppercase text-lime/60 inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1">
                   → Explore what's possible
                 </span>
               </div>

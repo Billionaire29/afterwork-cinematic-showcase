@@ -33,10 +33,10 @@ export const About = () => {
   }, [inView]);
 
   return (
-    <section id="about" className="relative py-28 md:py-36 border-t border-white/5 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-32 border-t border-white/5 overflow-hidden">
       <div className="scanline" />
       <div className="container">
-        <div className="font-mono-ui t-label text-white/40 mb-10 flex items-center gap-3">
+        <div className="font-mono-ui t-label text-white/40 mb-6 md:mb-8 flex items-center gap-3">
           <span className="w-6 h-px bg-lime" /> 03 — Philosophy
         </div>
 
