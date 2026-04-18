@@ -23,6 +23,14 @@ const faqs = [
     q: "What makes Afterwork different from other agencies?",
     a: "We obsess over craft. Every pixel, every animation, every line of code is intentional. We don't ship anything we wouldn't be proud to put our name on.",
   },
+  {
+    q: "How much does a typical project cost?",
+    a: "Pricing depends on scope and complexity. Landing pages start around ₹15k, full websites from ₹40k, and custom apps are quoted per project. We send a transparent breakdown after a discovery call.",
+  },
+  {
+    q: "Do you work with international clients?",
+    a: "Absolutely. We've delivered projects across India, the US, UK, and the Middle East. Async-first communication, clear timelines, and weekly demo videos keep everyone in sync regardless of timezone.",
+  },
 ];
 
 export const FAQ = () => {
@@ -50,20 +58,11 @@ export const FAQ = () => {
             <Star size={28} fill="#C6F135" stroke="#C6F135" />
           </div>
           <div className="flex items-center gap-4">
-            <div className="hidden sm:flex -space-x-3">
-              {[
-                "linear-gradient(135deg,#5eead4,#0f766e)",
-                "linear-gradient(135deg,#67e8f9,#0e7490)",
-                "linear-gradient(135deg,#a7f3d0,#047857)",
-              ].map((bg, i) => (
-                <div key={i} className="w-9 h-9 rounded-full border-2 border-background" style={{ background: bg }} />
-              ))}
-            </div>
-            <div>
+            <div className="text-right">
               <div className="font-display text-white text-sm">Explore our trust score</div>
               <div className="font-mono-ui text-[11px] uppercase tracking-[0.15em] text-white/50 mt-0.5">Customer Reviews</div>
             </div>
-            <span className="w-2 h-2 rounded-full bg-lime soft-pulse ml-2" />
+            <span className="w-2 h-2 rounded-full bg-lime soft-pulse" />
           </div>
         </div>
 

@@ -15,19 +15,23 @@ const tickerItems = [
 export const Hero = () => {
   return (
     <section id="top" className="relative min-h-screen w-full overflow-hidden grain flex flex-col">
-      {/* Cinematic orbs */}
-      <div className="orb" style={{ width: 600, height: 600, background: "#C6F135", opacity: 0.06, top: "-10%", right: "-8%" }} />
-      <div className="orb" style={{ width: 400, height: 400, background: "#ffffff", opacity: 0.03, bottom: "-5%", left: "-5%", animationDelay: "-7s" }} />
-      <div className="orb soft-pulse" style={{ width: 300, height: 300, background: "#C6F135", opacity: 0.04, top: "40%", left: "45%", animationDelay: "-10s" }} />
+      {/* New cinematic aurora background */}
+      <div className="absolute inset-0 hero-aurora pointer-events-none" />
+      <div className="absolute inset-0 hero-grid-fade pointer-events-none" />
+
+      {/* Intensified orbs */}
+      <div className="orb" style={{ width: 680, height: 680, background: "#C6F135", opacity: 0.16, top: "-12%", right: "-10%" }} />
+      <div className="orb" style={{ width: 480, height: 480, background: "#7dd3fc", opacity: 0.08, bottom: "-8%", left: "-6%", animationDelay: "-7s" }} />
+      <div className="orb soft-pulse" style={{ width: 360, height: 360, background: "#C6F135", opacity: 0.12, top: "38%", left: "42%", animationDelay: "-10s" }} />
 
       <div className="container flex-1 flex flex-col justify-center pt-28 pb-10 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="font-mono-ui t-label text-white/50 mb-8 flex items-center gap-3"
+          className="font-mono-ui text-[9px] md:text-[11px] tracking-[0.15em] uppercase text-white/50 mb-8 flex items-center gap-3"
         >
-          <span className="w-6 h-px bg-lime" />
+          <span className="w-5 h-px bg-lime" />
           Independent Digital Agency — EST. 2022
         </motion.div>
 
@@ -63,15 +67,15 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-12 flex items-center gap-6"
+          className="mt-12 flex items-center gap-4 md:gap-6 flex-wrap"
         >
           <a
             href="#work"
-            className="btn-sweep inline-flex items-center gap-2 px-6 py-3 rounded-full border border-lime text-lime hover:text-background font-mono-ui t-label"
+            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-lime text-lime hover:text-background font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
           >
-            See Our Work <ArrowUpRight size={14} />
+            See Our Work <ArrowUpRight size={12} />
           </a>
-          <a href="#contact" className="font-mono-ui t-label text-white/60 hover:text-lime transition-colors">
+          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-white/60 hover:text-lime transition-colors">
             or — start a project ↘
           </a>
         </motion.div>
