@@ -33,12 +33,10 @@ const Card = ({ p, i }: { p: Project; i: number }) => {
       }`}
       style={{ aspectRatio: isWide ? "16/10" : "4/5" }}
     >
-      {/* Favicon */}
       <div className="absolute top-4 left-4 z-20 w-9 h-9 rounded-full bg-background/80 backdrop-blur border border-white/10 flex items-center justify-center overflow-hidden">
         <img src={p.favicon} alt="" className="w-5 h-5" onError={(e) => ((e.currentTarget.style.display = "none"))} />
       </div>
 
-      {/* iframe preview */}
       <div className="absolute inset-0 overflow-hidden bg-white/[0.02]">
         <div className="absolute inset-0 transition-transform duration-[1.4s] ease-out group-hover:-translate-y-[15%]">
           <iframe
@@ -57,14 +55,12 @@ const Card = ({ p, i }: { p: Project; i: number }) => {
         </div>
       </div>
 
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10 pointer-events-none" />
 
-      {/* Bottom info */}
-      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 z-10">
+      <div className="absolute inset-x-0 bottom-0 p-5 md:p-7 z-10">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <h3 className="font-display text-white text-3xl md:text-4xl leading-tight">{p.name}</h3>
+            <h3 className="font-display t-card-title text-white leading-tight">{p.name}</h3>
             <div className="flex flex-wrap gap-2 mt-3">
               {p.tags.map((t) => (
                 <span key={t} className="font-mono-ui text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border border-white/15 text-white/70">
@@ -84,25 +80,30 @@ const Card = ({ p, i }: { p: Project; i: number }) => {
 
 export const Portfolio = () => {
   return (
-    <section id="work" className="relative py-32 md:py-44 border-t border-white/5">
-      <div className="container">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+    <section id="work" className="relative py-28 md:py-36 border-t border-white/5 overflow-hidden">
+      <div className="absolute inset-0 spotlight pointer-events-none" />
+      <div className="container relative">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <div className="font-mono-ui text-[11px] uppercase tracking-[0.3em] text-white/40 mb-6 flex items-center gap-3">
+            <div className="font-mono-ui t-label text-white/40 mb-5 flex items-center gap-3">
               <span className="w-6 h-px bg-lime" /> 02 — Selected portfolio
             </div>
-            <h2 className="font-display text-white text-6xl md:text-8xl leading-[0.9]">SELECTED WORKS</h2>
+            <h2 className="font-display h-section text-white">SELECTED WORKS</h2>
           </div>
-          <p className="font-serif-italic text-2xl md:text-3xl text-white/60 max-w-md">
+          <p className="font-serif-italic t-sub text-white/60 max-w-md">
             Projects that actually shipped.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-6 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-6 gap-5 md:gap-6">
           {projects.map((p, i) => (
             <Card key={p.url} p={p} i={i} />
           ))}
         </div>
+
+        <p className="mt-10 font-mono-ui text-[11px] tracking-[0.18em] uppercase text-white/40 flex items-center gap-2">
+          <span className="text-lime">✳</span> All projects are live — click to visit
+        </p>
       </div>
     </section>
   );
