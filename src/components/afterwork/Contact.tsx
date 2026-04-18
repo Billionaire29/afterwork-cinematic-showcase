@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Twitter, Instagram, Linkedin, Github, Zap, Target, Handshake } from "lucide-react";
+import { Twitter, Instagram, Linkedin, ArrowUpRight, Zap, Target, Handshake } from "lucide-react";
 
 const socials = [
   { Icon: Twitter, label: "Twitter", href: "#" },
   { Icon: Instagram, label: "Instagram", href: "#" },
   { Icon: Linkedin, label: "LinkedIn", href: "#" },
-  { Icon: Github, label: "GitHub", href: "#" },
 ];
 
 const chips = [
@@ -73,11 +72,11 @@ export const Contact = () => {
               <a
                 key={label}
                 href={href}
-                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-white/60 hover:text-lime transition-all duration-300 hover:scale-105"
-                style={{ filter: "drop-shadow(0 0 0 transparent)" }}
+                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-white/60 hover:text-lime transition-all duration-300"
               >
-                <Icon size={16} color="#C6F135" className="transition-transform group-hover:scale-110" />
+                <Icon size={14} color="#C6F135" className="transition-transform group-hover:scale-110" />
                 {label}
+                <ArrowUpRight size={12} className="text-lime opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ))}
           </div>
