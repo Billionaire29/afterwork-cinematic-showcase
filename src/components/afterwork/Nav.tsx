@@ -31,7 +31,7 @@ export const Nav = () => {
       >
         <nav className="container flex items-center justify-between h-16 md:h-20">
           <a href="#top" className="font-display text-base md:text-lg text-white" style={{ letterSpacing: "0.2em" }}>
-            AFTERWORK
+            VYNORA
           </a>
 
           <ul className="hidden md:flex items-center gap-10">
@@ -81,7 +81,7 @@ export const Nav = () => {
             />
 
             <div className="container flex items-center justify-between h-16 relative z-10">
-              <span className="font-display text-base text-white" style={{ letterSpacing: "0.2em" }}>AFTERWORK</span>
+              <span className="font-display text-base text-white" style={{ letterSpacing: "0.2em" }}>VYNORA</span>
               <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-white font-display text-2xl">
                 <X size={28} />
               </button>
