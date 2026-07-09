@@ -50,7 +50,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="block text-shimmer"
           >
-            AFTERWORK.
+            VYNORA
           </motion.span>
         </h1>
 
