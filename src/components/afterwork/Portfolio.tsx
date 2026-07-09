@@ -13,7 +13,7 @@ const projects: Project[] = [
   { name: "Apives", url: "https://apives.com", favicon: "https://apives.com/favicon.ico", tags: ["Web Design", "Brand Identity"], size: "wide" },
   { name: "Startives", url: "https://startives.com", favicon: "https://startives.com/favicon.ico", tags: ["SaaS", "Landing Page"], size: "wide" },
   { name: "Scoutives", url: "https://scoutives.vercel.app", favicon: "https://scoutives.vercel.app/favicon.ico", tags: ["Web App", "UI/UX"], size: "small" },
-  { name: "Janhit Seva Sansthan", url: "https://janhitngo20.vercel.app", favicon: "https://janhitngo20.vercel.app/favicon.ico", tags: ["NGO", "Social Impact"], size: "small" },
+  { name: "Janhit Seva Sansthan", url: "https://janhitsewasansthan.com", favicon: "https://janhitsewasansthan.com/favicon.ico", tags: ["NGO", "Social Impact"], size: "small" },
   { name: "Ladamark", url: "https://ladamark.vercel.app", favicon: "https://ladamark.vercel.app/favicon.ico", tags: ["E-commerce", "Brand"], size: "small" },
 ];
 
