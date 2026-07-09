@@ -20,7 +20,7 @@ const faqs = [
     a: "Yes — we offer monthly maintenance packages covering updates, security, performance monitoring, and content changes.",
   },
   {
-    q: "What makes Afterwork different from other agencies?",
+    q: "What makes Vynora different from other agencies?",
     a: "We obsess over craft. Every pixel, every animation, every line of code is intentional. We don't ship anything we wouldn't be proud to put our name on.",
   },
   {
