@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 import { Twitter, Instagram, Linkedin, ArrowUpRight, Zap, Target, Handshake } from "lucide-react";
 
 const socials = [
@@ -54,7 +55,7 @@ export const Contact = () => {
 
           <div className="flex flex-wrap gap-3 mt-10">
             <a
-              href="mailto:hello@afterwork.studio"
+              href="mailto:hello@therarecompany.in"
               className="btn-sweep btn-sweep-dark inline-flex items-center px-6 py-3 rounded-full bg-accent text-background font-mono-ui t-label hover:text-accent"
             >
               Start a Project →
@@ -89,9 +90,9 @@ export const Contact = () => {
 export const Footer = () => (
   <footer className="border-t border-ink/5 py-8">
     <div className="container flex flex-col md:flex-row items-center justify-between gap-3">
-      <span className="font-display text-ink text-sm" style={{ letterSpacing: "0.2em" }}>THE RARE COMPANY</span>
+      <img src={logo} alt="The Rare Company logo" className="h-7 w-auto object-contain" />
       <p className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-ink/40">
-        © 2025 The Rare Company. All rights reserved.
+        © 2026 The Rare Company. All rights reserved.
       </p>
       <span className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-ink/40 flex items-center gap-2">
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink" /> Online
