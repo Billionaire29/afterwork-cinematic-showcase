@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const links = [
   { href: "#work", label: "Work" },
   { href: "#services", label: "Services" },
+  { href: "#legal", label: "Legal" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
@@ -30,8 +32,8 @@ export const Nav = () => {
         }`}
       >
         <nav className="container flex items-center justify-between h-16 md:h-20">
-          <a href="#top" className="font-display text-base md:text-lg text-ink" style={{ letterSpacing: "0.2em" }}>
-            THE RARE COMPANY
+          <a href="#top" className="flex items-center" aria-label="The Rare Company — home">
+            <img src={logo} alt="The Rare Company logo" className="h-7 md:h-9 w-auto object-contain" />
           </a>
 
           <ul className="hidden md:flex items-center gap-10">
@@ -70,7 +72,7 @@ export const Nav = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-background flex flex-col overflow-hidden"
           >
-            {/* blurred lime orb bottom-right */}
+            {/* blurred red orb bottom-right */}
             <div
               className="absolute pointer-events-none"
               style={{
@@ -81,7 +83,7 @@ export const Nav = () => {
             />
 
             <div className="container flex items-center justify-between h-16 relative z-10">
-              <span className="font-display text-base text-ink" style={{ letterSpacing: "0.2em" }}>THE RARE COMPANY</span>
+              <img src={logo} alt="The Rare Company logo" className="h-7 w-auto object-contain" />
               <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-ink font-display text-2xl">
                 <X size={28} />
               </button>
