@@ -32,10 +32,10 @@ const Icon4 = () => (
 );
 
 const services = [
-  { Icon: Icon1, title: "Web Development", desc: "Building responsive, fast, and user-friendly websites to grow your business." },
-  { Icon: Icon2, title: "Digital Marketing", desc: "Boosting your brand online with targeted, creative digital marketing strategies." },
-  { Icon: Icon3, title: "Graphic Design", desc: "Creating stunning visuals that communicate your brand's story with impact." },
-  { Icon: Icon4, title: "App Development", desc: "Developing intuitive, scalable apps that enhance user experience and engagement." },
+  { Icon: Icon1, title: "IT Services", desc: "End-to-end IT support, cloud setup, automation and consulting for teams that need technology to just work." },
+  { Icon: Icon2, title: "Web Development", desc: "Fast, responsive, search-ready websites — engineered to convert visitors into customers." },
+  { Icon: Icon4, title: "App Development", desc: "Scalable Android, iOS and cross-platform apps with interfaces people actually enjoy using." },
+  { Icon: Icon3, title: "Legal Services", desc: "Criminal, civil and family law — consultation, drafting, bail, quashing and High Court representation." },
 ];
 
 export const Services = () => {
@@ -51,9 +51,10 @@ export const Services = () => {
             <h2 className="font-display h-section text-ink">OUR FOCUS</h2>
           </div>
           <p className="font-serif-italic t-sub text-ink/60 max-w-md">
-            Four pillars. Infinite possibilities.
+            Technology and law, under one roof.
           </p>
         </div>
+
 
         <div className="grid md:grid-cols-2 gap-5 md:gap-6">
           {services.map(({ Icon, title, desc }, i) => (
