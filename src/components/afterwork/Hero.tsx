@@ -50,7 +50,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.25 }}
             className="block text-shimmer"
           >
-            THE RARE COMPANY
+            RARE THINGS.
           </motion.span>
         </h1>
 
