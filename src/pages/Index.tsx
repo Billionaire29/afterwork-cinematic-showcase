@@ -4,7 +4,7 @@ import { Hero } from "@/components/afterwork/Hero";
 import { Services } from "@/components/afterwork/Services";
 import { Process } from "@/components/afterwork/Process";
 import { Portfolio } from "@/components/afterwork/Portfolio";
-import { TechStack } from "@/components/afterwork/TechStack";
+import { Legal } from "@/components/afterwork/Legal";
 import { Testimonials } from "@/components/afterwork/Testimonials";
 import { FAQ } from "@/components/afterwork/FAQ";
 import { About } from "@/components/afterwork/About";
@@ -20,7 +20,7 @@ const Index = () => {
       <Services />
       <Process />
       <Portfolio />
-      <TechStack />
+      <Legal />
       <Testimonials />
       <FAQ />
       <About />

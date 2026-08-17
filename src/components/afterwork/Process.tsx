@@ -10,24 +10,24 @@ const steps = [
 
 export const Process = () => {
   return (
-    <section className="relative py-24 md:py-32 border-t border-white/5 overflow-hidden">
+    <section className="relative py-24 md:py-32 border-t border-ink/5 overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-40 pointer-events-none" />
       <div className="container relative">
         <div className="text-center mb-14">
-          <div className="font-mono-ui t-label text-lime mb-4 flex items-center justify-center gap-2">
+          <div className="font-mono-ui t-label text-accent mb-4 flex items-center justify-center gap-2">
             <span>✳</span> Our Process
           </div>
-          <h2 className="font-display h-section text-white">
-            How we <span className="text-lime">make it</span> happen
+          <h2 className="font-display h-section text-ink">
+            How we <span className="text-accent">make it</span> happen
           </h2>
-          <p className="font-serif-italic t-sub text-white/60 mt-4 max-w-xl mx-auto">
+          <p className="font-serif-italic t-sub text-ink/60 mt-4 max-w-xl mx-auto">
             Four steps. Zero filler.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 relative">
           {/* connecting line */}
-          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-lime/30 to-transparent" />
+          <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
           {steps.map(({ Icon, n, title, desc }, i) => (
             <motion.div
               key={n}
@@ -35,16 +35,16 @@ export const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative glass rounded-[20px] p-6 hover:border-lime/40 hover:-translate-y-1 transition-all duration-500 group"
+              className="relative glass rounded-[20px] p-6 hover:border-accent/40 hover:-translate-y-1 transition-all duration-500 group"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-full border border-lime/40 flex items-center justify-center text-lime group-hover:bg-lime group-hover:text-background transition-colors">
+                <div className="w-11 h-11 rounded-full border border-accent/40 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-colors">
                   <Icon size={18} />
                 </div>
-                <span className="font-display text-white/10 text-3xl group-hover:text-lime/30 transition-colors">{n}</span>
+                <span className="font-display text-ink/10 text-3xl group-hover:text-accent/30 transition-colors">{n}</span>
               </div>
-              <h3 className="font-display text-white text-lg mb-2">{title}</h3>
-              <p className="font-mono-ui text-[12px] leading-relaxed text-white/55">{desc}</p>
+              <h3 className="font-display text-ink text-lg mb-2">{title}</h3>
+              <p className="font-mono-ui text-[12px] leading-relaxed text-ink/55">{desc}</p>
             </motion.div>
           ))}
         </div>

@@ -37,12 +37,12 @@ export const Cursor = () => {
     <>
       <div
         ref={dotRef}
-        className="hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full bg-lime pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2"
+        className="hidden md:block fixed top-0 left-0 w-2 h-2 rounded-full bg-accent pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2"
         style={{ marginLeft: "-4px", marginTop: "-4px" }}
       />
       <div
         ref={ringRef}
-        className="hidden md:block fixed top-0 left-0 rounded-full border border-lime pointer-events-none z-[99] transition-[width,height,opacity] duration-200"
+        className="hidden md:block fixed top-0 left-0 rounded-full border border-accent pointer-events-none z-[99] transition-[width,height,opacity] duration-200"
         style={{
           width: hover ? 56 : 28,
           height: hover ? 56 : 28,

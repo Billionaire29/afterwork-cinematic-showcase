@@ -11,7 +11,7 @@ const items: T[] = [
     role: "Jeevan Ki Nai Shuruaat NGO",
   },
   {
-    quote: "Afterwork doesn't just build websites — they build experiences. Our conversion rate doubled after the redesign.",
+    quote: "The Rare Company doesn't just build websites — they build experiences. Our conversion rate doubled after the redesign.",
     name: "Prince",
     role: "Founder, Startives",
   },
@@ -55,17 +55,17 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section className="relative py-28 md:py-36 border-t border-white/5 overflow-hidden">
+    <section className="relative py-28 md:py-36 border-t border-ink/5 overflow-hidden">
       <div className="container relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
-            <div className="font-mono-ui t-label text-lime mb-5 flex items-center gap-2">
+            <div className="font-mono-ui t-label text-accent mb-5 flex items-center gap-2">
               <span>✳</span> Testimonials
             </div>
-            <h2 className="font-display h-section text-white">
-              What <span className="text-lime">clients</span> are saying
+            <h2 className="font-display h-section text-ink">
+              What <span className="text-accent">clients</span> are saying
             </h2>
-            <p className="font-serif-italic t-sub text-white/60 mt-5 max-w-lg">
+            <p className="font-serif-italic t-sub text-ink/60 mt-5 max-w-lg">
               Real words from real people we've worked with.
             </p>
           </div>
@@ -73,13 +73,13 @@ export const Testimonials = () => {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-full border border-white/20 text-white font-mono-ui t-label hover:border-lime hover:text-lime transition-colors"
+              className="inline-flex items-center px-5 py-2.5 rounded-full border border-ink/20 text-ink font-mono-ui t-label hover:border-accent hover:text-accent transition-colors"
             >
               Contact Us
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-lime text-background hover:scale-110 transition-transform"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent text-background hover:scale-110 transition-transform"
               aria-label="Contact"
             >
               <ArrowUpRight size={18} />
@@ -99,16 +99,16 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="snap-start shrink-0 w-[88%] md:w-[440px] relative rounded-[20px] p-7 border border-white/10"
+              className="snap-start shrink-0 w-[88%] md:w-[440px] relative rounded-[20px] p-7 border border-ink/10"
               style={{ background: "rgba(255,255,255,0.05)" }}
             >
-              <span className="absolute top-5 right-5 w-2 h-2 rounded-full bg-lime soft-pulse" />
-              <p className="font-display-light italic text-white/85 leading-relaxed" style={{ fontSize: 15 }}>
+              <span className="absolute top-5 right-5 w-2 h-2 rounded-full bg-accent soft-pulse" />
+              <p className="font-display-light italic text-ink/85 leading-relaxed" style={{ fontSize: 15 }}>
                 "{t.quote}"
               </p>
-              <div className="mt-7 pt-5 border-t border-white/10">
-                <div className="font-display text-white text-base">{t.name}</div>
-                <div className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-lime mt-1.5">{t.role}</div>
+              <div className="mt-7 pt-5 border-t border-ink/10">
+                <div className="font-display text-ink text-base">{t.name}</div>
+                <div className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-accent mt-1.5">{t.role}</div>
               </div>
             </motion.article>
           ))}
@@ -122,8 +122,8 @@ export const Testimonials = () => {
               aria-label={`Go to testimonial ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
                 active === i
-                  ? "w-3 h-3 bg-lime"
-                  : "w-2.5 h-2.5 border border-white/40"
+                  ? "w-3 h-3 bg-accent"
+                  : "w-2.5 h-2.5 border border-ink/40"
               }`}
             />
           ))}

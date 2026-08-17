@@ -1,6 +1,6 @@
 export const WhatsAppFloat = () => {
   const href =
-    "https://wa.me/917880420247?text=Hi%20Afterwork!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F";
+    "https://wa.me/917880420247?text=Hi%20The Rare Company!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F";
   return (
     <a
       href={href}
