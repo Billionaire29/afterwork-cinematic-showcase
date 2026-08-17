@@ -20,7 +20,7 @@ const faqs = [
     a: "Yes — we offer monthly maintenance packages covering updates, security, performance monitoring, and content changes.",
   },
   {
-    q: "What makes Vynora different from other agencies?",
+    q: "What makes The Rare Company different from other agencies?",
     a: "We obsess over craft. Every pixel, every animation, every line of code is intentional. We don't ship anything we wouldn't be proud to put our name on.",
   },
   {
@@ -37,32 +37,32 @@ export const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative py-28 md:py-36 border-t border-white/5">
+    <section className="relative py-28 md:py-36 border-t border-ink/5">
       <div className="container max-w-5xl">
         <div className="text-center mb-12">
-          <div className="font-mono-ui t-label text-lime mb-5 flex items-center justify-center gap-2">
+          <div className="font-mono-ui t-label text-accent mb-5 flex items-center justify-center gap-2">
             <span>✳</span> FAQs
           </div>
-          <h2 className="font-display h-section text-white">
-            Answers to your common <span className="text-lime">questions</span>
+          <h2 className="font-display h-section text-ink">
+            Answers to your common <span className="text-accent">questions</span>
           </h2>
-          <p className="font-serif-italic t-sub text-white/60 mt-5 max-w-2xl mx-auto">
+          <p className="font-serif-italic t-sub text-ink/60 mt-5 max-w-2xl mx-auto">
             Everything you need to know — simple answers to the most frequently asked questions about our services.
           </p>
         </div>
 
         {/* Trust badge */}
-        <div className="glass rounded-2xl p-5 md:p-6 mb-10 flex items-center justify-between gap-6 transition-all duration-500 hover:border-lime/40 hover:shadow-[0_20px_60px_-20px_rgba(198,241,53,0.3)]">
+        <div className="glass rounded-2xl p-5 md:p-6 mb-10 flex items-center justify-between gap-6 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_20px_60px_-20px_rgba(216,30,54,0.3)]">
           <div className="flex items-center gap-4">
-            <div className="font-display text-white text-5xl md:text-6xl leading-none">4.9</div>
-            <Star size={28} fill="#C6F135" stroke="#C6F135" />
+            <div className="font-display text-ink text-5xl md:text-6xl leading-none">4.9</div>
+            <Star size={28} fill="#D81E36" stroke="#D81E36" />
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right">
-              <div className="font-display text-white text-sm">Explore our trust score</div>
-              <div className="font-mono-ui text-[11px] uppercase tracking-[0.15em] text-white/50 mt-0.5">Customer Reviews</div>
+              <div className="font-display text-ink text-sm">Explore our trust score</div>
+              <div className="font-mono-ui text-[11px] uppercase tracking-[0.15em] text-ink/50 mt-0.5">Customer Reviews</div>
             </div>
-            <span className="w-2 h-2 rounded-full bg-lime soft-pulse" />
+            <span className="w-2 h-2 rounded-full bg-accent soft-pulse" />
           </div>
         </div>
 
@@ -72,17 +72,17 @@ export const FAQ = () => {
             return (
               <div
                 key={i}
-                className="rounded-2xl border border-white/8 transition-colors duration-300"
+                className="rounded-2xl border border-ink/8 transition-colors duration-300"
                 style={{ background: "rgba(255,255,255,0.03)" }}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left"
                 >
-                  <span className="font-display text-white text-[15px] md:text-base">{f.q}</span>
+                  <span className="font-display text-ink text-[15px] md:text-base">{f.q}</span>
                   <span
                     className={`shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      isOpen ? "bg-lime text-background" : "border border-lime/40 text-lime"
+                      isOpen ? "bg-accent text-background" : "border border-accent/40 text-accent"
                     }`}
                   >
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
@@ -97,7 +97,7 @@ export const FAQ = () => {
                       transition={{ duration: 0.4, ease: [0.2, 0.8, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-5 md:px-6 pb-6 text-white/70 t-card-body font-mono-ui leading-relaxed max-w-3xl">
+                      <p className="px-5 md:px-6 pb-6 text-ink/70 t-card-body font-mono-ui leading-relaxed max-w-3xl">
                         {f.a}
                       </p>
                     </motion.div>

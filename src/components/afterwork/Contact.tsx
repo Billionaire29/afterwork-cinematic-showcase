@@ -15,8 +15,8 @@ const chips = [
 
 export const Contact = () => {
   return (
-    <section id="contact" className="relative py-28 md:py-40 border-t border-white/5 overflow-hidden grain">
-      <div className="orb" style={{ width: 500, height: 500, background: "#C6F13555", top: "20%", left: "60%" }} />
+    <section id="contact" className="relative py-28 md:py-40 border-t border-ink/5 overflow-hidden grain">
+      <div className="orb" style={{ width: 500, height: 500, background: "#D81E3655", top: "20%", left: "60%" }} />
 
       <div className="container relative z-10">
         <motion.div
@@ -26,8 +26,8 @@ export const Contact = () => {
           transition={{ duration: 0.8 }}
           className="max-w-6xl"
         >
-          <div className="font-mono-ui t-label text-white/40 mb-8 flex items-center gap-3">
-            <span className="w-6 h-px bg-lime" /> 04 — Let's talk
+          <div className="font-mono-ui t-label text-ink/40 mb-8 flex items-center gap-3">
+            <span className="w-6 h-px bg-accent" /> 04 — Let's talk
           </div>
 
           {/* Feature chips */}
@@ -35,48 +35,48 @@ export const Contact = () => {
             {chips.map(({ Icon, label }) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass font-mono-ui text-[12px] tracking-[0.12em] uppercase text-white"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass font-mono-ui text-[12px] tracking-[0.12em] uppercase text-ink"
               >
-                <Icon size={14} color="#C6F135" />
+                <Icon size={14} color="#D81E36" />
                 {label}
               </span>
             ))}
           </div>
 
-          <h2 className="font-display text-white h-section">
+          <h2 className="font-display text-ink h-section">
             LET'S BUILD <br />
-            <span className="text-lime">SOMETHING.</span>
+            <span className="text-accent">SOMETHING.</span>
           </h2>
 
-          <p className="font-serif-italic t-sub text-white/70 mt-6 max-w-2xl">
+          <p className="font-serif-italic t-sub text-ink/70 mt-6 max-w-2xl">
             We're accepting new projects. Are you ready?
           </p>
 
           <div className="flex flex-wrap gap-3 mt-10">
             <a
               href="mailto:hello@afterwork.studio"
-              className="btn-sweep btn-sweep-dark inline-flex items-center px-6 py-3 rounded-full bg-lime text-background font-mono-ui t-label hover:text-lime"
+              className="btn-sweep btn-sweep-dark inline-flex items-center px-6 py-3 rounded-full bg-accent text-background font-mono-ui t-label hover:text-accent"
             >
               Start a Project →
             </a>
             <a
               href="#work"
-              className="btn-sweep inline-flex items-center px-6 py-3 rounded-full border border-white/30 text-white hover:text-background font-mono-ui t-label"
+              className="btn-sweep inline-flex items-center px-6 py-3 rounded-full border border-ink/30 text-ink hover:text-background font-mono-ui t-label"
             >
               View All Work
             </a>
           </div>
 
-          <div className="mt-20 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-8">
+          <div className="mt-20 flex flex-wrap gap-x-8 gap-y-4 border-t border-ink/10 pt-8">
             {socials.map(({ Icon, label, href }) => (
               <a
                 key={label}
                 href={href}
-                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-white/60 hover:text-lime transition-all duration-300"
+                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-ink/60 hover:text-accent transition-all duration-300"
               >
-                <Icon size={14} color="#C6F135" className="transition-transform group-hover:scale-110" />
+                <Icon size={14} color="#D81E36" className="transition-transform group-hover:scale-110" />
                 {label}
-                <ArrowUpRight size={12} className="text-lime opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight size={12} className="text-accent opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ))}
           </div>
@@ -87,14 +87,14 @@ export const Contact = () => {
 };
 
 export const Footer = () => (
-  <footer className="border-t border-white/5 py-8">
+  <footer className="border-t border-ink/5 py-8">
     <div className="container flex flex-col md:flex-row items-center justify-between gap-3">
-      <span className="font-display text-white text-sm" style={{ letterSpacing: "0.2em" }}>AFTERWORK</span>
-      <p className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-white/40">
-        © 2025 Afterwork. All rights reserved.
+      <span className="font-display text-ink text-sm" style={{ letterSpacing: "0.2em" }}>THE RARE COMPANY</span>
+      <p className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-ink/40">
+        © 2025 The Rare Company. All rights reserved.
       </p>
-      <span className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-white/40 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-lime animate-blink" /> Online
+      <span className="font-mono-ui text-[11px] uppercase tracking-[0.25em] text-ink/40 flex items-center gap-2">
+        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink" /> Online
       </span>
     </div>
   </footer>

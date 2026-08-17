@@ -25,13 +25,13 @@ export const Nav = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "backdrop-blur-2xl bg-background/40 border-b border-lime/20"
+            ? "backdrop-blur-2xl bg-background/40 border-b border-accent/20"
             : "bg-transparent"
         }`}
       >
         <nav className="container flex items-center justify-between h-16 md:h-20">
-          <a href="#top" className="font-display text-base md:text-lg text-white" style={{ letterSpacing: "0.2em" }}>
-            VYNORA
+          <a href="#top" className="font-display text-base md:text-lg text-ink" style={{ letterSpacing: "0.2em" }}>
+            THE RARE COMPANY
           </a>
 
           <ul className="hidden md:flex items-center gap-10">
@@ -39,7 +39,7 @@ export const Nav = () => {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-mono-ui t-nav text-white/70 hover:text-lime transition-colors"
+                  className="font-mono-ui t-nav text-ink/70 hover:text-accent transition-colors"
                 >
                   {l.label}
                 </a>
@@ -47,13 +47,13 @@ export const Nav = () => {
             ))}
           </ul>
 
-          <div className="hidden md:flex items-center gap-3 font-mono-ui t-label text-white/70">
-            <span className="w-2 h-2 rounded-full bg-lime animate-blink" />
+          <div className="hidden md:flex items-center gap-3 font-mono-ui t-label text-ink/70">
+            <span className="w-2 h-2 rounded-full bg-accent animate-blink" />
             Available for projects
           </div>
 
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-ink"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -75,14 +75,14 @@ export const Nav = () => {
               className="absolute pointer-events-none"
               style={{
                 width: 520, height: 520, borderRadius: "9999px",
-                background: "#C6F135", opacity: 0.18, filter: "blur(120px)",
+                background: "#D81E36", opacity: 0.18, filter: "blur(120px)",
                 bottom: "-180px", right: "-160px",
               }}
             />
 
             <div className="container flex items-center justify-between h-16 relative z-10">
-              <span className="font-display text-base text-white" style={{ letterSpacing: "0.2em" }}>VYNORA</span>
-              <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-white font-display text-2xl">
+              <span className="font-display text-base text-ink" style={{ letterSpacing: "0.2em" }}>THE RARE COMPANY</span>
+              <button onClick={() => setOpen(false)} aria-label="Close menu" className="text-ink font-display text-2xl">
                 <X size={28} />
               </button>
             </div>
@@ -97,7 +97,7 @@ export const Nav = () => {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="font-display text-white hover:text-lime hover:translate-x-2 transition-all duration-300 inline-block"
+                    className="font-display text-ink hover:text-accent hover:translate-x-2 transition-all duration-300 inline-block"
                     style={{ fontSize: "clamp(36px, 8vw, 64px)", letterSpacing: "-0.02em", lineHeight: 1 }}
                   >
                     {l.label}
@@ -105,8 +105,8 @@ export const Nav = () => {
                 </motion.li>
               ))}
             </ul>
-            <div className="container py-8 flex items-center gap-3 font-mono-ui t-label text-white/60 relative z-10">
-              <span className="w-2 h-2 rounded-full bg-lime animate-blink" />
+            <div className="container py-8 flex items-center gap-3 font-mono-ui t-label text-ink/60 relative z-10">
+              <span className="w-2 h-2 rounded-full bg-accent animate-blink" />
               Available for projects
             </div>
           </motion.div>
