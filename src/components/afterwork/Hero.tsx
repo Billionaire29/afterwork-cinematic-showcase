@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe, Megaphone, Brush, Smartphone, Search, Zap, Target, MousePointer2 } from "lucide-react";
+import { ArrowUpRight, Globe, Smartphone, Search, Zap, Target, Scale, Gavel, FileText } from "lucide-react";
 
 const tickerItems = [
   { Icon: Globe, label: "Web Development" },
-  { Icon: Megaphone, label: "Digital Marketing" },
-  { Icon: Brush, label: "Graphic Design" },
   { Icon: Smartphone, label: "App Development" },
-  { Icon: Target, label: "Brand Strategy" },
-  { Icon: MousePointer2, label: "UI / UX" },
+  { Icon: Zap, label: "IT Services" },
+  { Icon: Scale, label: "Legal Consultation" },
+  { Icon: Gavel, label: "Bail & FIR Matters" },
+  { Icon: FileText, label: "Legal Drafting" },
   { Icon: Search, label: "SEO" },
-  { Icon: Zap, label: "Performance" },
+  { Icon: Target, label: "Brand Strategy" },
 ];
 
 export const Hero = () => {
