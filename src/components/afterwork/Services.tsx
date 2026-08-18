@@ -64,7 +64,7 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group glass rounded-[20px] p-7 md:p-9 transition-all duration-500 hover:-translate-y-2 hover:border-accent/60 hover:shadow-[0_30px_80px_-20px_rgba(216,30,54,0.25)] cursor-pointer"
+              className="group glass rounded-[20px] p-7 md:p-9 transition-all duration-500    cursor-pointer"
             >
               <div className="flex items-start justify-between">
                 <Icon />
@@ -73,10 +73,10 @@ export const Services = () => {
               <h3 className="font-display t-card-title text-ink mt-10">{title}</h3>
               <p className="text-ink/55 mt-3 max-w-md leading-relaxed t-card-body font-mono-ui">{desc}</p>
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-                <div className="inline-flex items-center gap-1.5 text-accent font-mono-ui text-[10px] tracking-[0.15em] uppercase group-hover:gap-2.5 transition-all">
+                <div className="inline-flex items-center gap-1.5 text-accent font-mono-ui text-[10px] tracking-[0.15em] uppercase  transition-all">
                   Read More <ArrowUpRight size={11} />
                 </div>
-                <span className="font-mono-ui text-[9px] tracking-[0.15em] uppercase text-accent/60 inline-flex items-center gap-1 transition-transform duration-300 group-hover:translate-x-1">
+                <span className="font-mono-ui text-[9px] tracking-[0.15em] uppercase text-accent/60 inline-flex items-center gap-1 transition-transform duration-300 ">
                   → Explore what's possible
                 </span>
               </div>

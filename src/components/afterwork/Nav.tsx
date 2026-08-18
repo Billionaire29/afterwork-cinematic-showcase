@@ -41,7 +41,7 @@ export const Nav = () => {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-mono-ui t-nav text-ink/70 hover:text-accent transition-colors"
+                  className="font-mono-ui t-nav text-ink/70  transition-colors"
                 >
                   {l.label}
                 </a>
@@ -99,7 +99,7 @@ export const Nav = () => {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="font-display text-ink hover:text-accent hover:translate-x-2 transition-all duration-300 inline-block"
+                    className="font-display text-ink   transition-all duration-300 inline-block"
                     style={{ fontSize: "clamp(36px, 8vw, 64px)", letterSpacing: "-0.02em", lineHeight: 1 }}
                   >
                     {l.label}

@@ -73,13 +73,13 @@ export const Testimonials = () => {
           <div className="flex items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-full border border-ink/20 text-ink font-mono-ui t-label hover:border-accent hover:text-accent transition-colors"
+              className="inline-flex items-center px-5 py-2.5 rounded-full border border-ink/20 text-ink font-mono-ui t-label   transition-colors"
             >
               Contact Us
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent text-background hover:scale-110 transition-transform"
+              className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent text-background  transition-transform"
               aria-label="Contact"
             >
               <ArrowUpRight size={18} />
@@ -104,7 +104,7 @@ export const Testimonials = () => {
             >
               <span className="absolute top-5 right-5 w-2 h-2 rounded-full bg-accent soft-pulse" />
               <p className="font-display-light italic text-ink/85 leading-relaxed" style={{ fontSize: 15 }}>
-                "{t.quote}"
+"{t.quote}"
               </p>
               <div className="mt-7 pt-5 border-t border-ink/10">
                 <div className="font-display text-ink text-base">{t.name}</div>

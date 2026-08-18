@@ -63,11 +63,11 @@ const Card = ({ p, i }: { p: Project; i: number }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-    className="group relative flex flex-col glass rounded-[26px] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-accent/50 hover:shadow-[0_36px_90px_-30px_rgba(216,30,54,0.45)]"
+    className="group relative flex flex-col glass rounded-[26px] overflow-hidden transition-all duration-500"
   >
     {/* Preview — square symmetric window */}
     <div className="relative m-3 rounded-[18px] overflow-hidden bg-ink/[0.03] border border-ink/10" style={{ aspectRatio: "1 / 1" }}>
-      <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out group-hover:-translate-y-[14%]">
+      <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out ">
         <iframe
           src={p.url}
           title={p.name}
@@ -90,7 +90,7 @@ const Card = ({ p, i }: { p: Project; i: number }) => (
         <span className="ml-2 font-mono-ui text-[9px] tracking-[0.12em] text-ink/45 truncate">{p.host}</span>
       </div>
 
-      <span className="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent text-accent-foreground opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
+      <span className="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent text-accent-foreground opacity-0 translate-y-2   transition-all duration-400">
         <ArrowUpRight size={16} />
       </span>
     </div>
@@ -103,7 +103,7 @@ const Card = ({ p, i }: { p: Project; i: number }) => (
       <p className="font-mono-ui text-[12.5px] leading-relaxed text-ink/55 mt-3">{p.blurb}</p>
       <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-ink/10">
         {p.tags.map((t) => (
-          <span key={t} className="font-mono-ui text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border border-ink/15 text-ink/60 group-hover:border-accent/40 group-hover:text-accent transition-colors">
+          <span key={t} className="font-mono-ui text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border border-ink/15 text-ink/60   transition-colors">
             {t}
           </span>
         ))}

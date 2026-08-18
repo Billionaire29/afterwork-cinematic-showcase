@@ -35,13 +35,13 @@ export const Process = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative glass rounded-[20px] p-6 hover:border-accent/40 hover:-translate-y-1 transition-all duration-500 group"
+              className="relative glass rounded-[20px] p-6   transition-all duration-500 group"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-full border border-accent/40 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-background transition-colors">
+                <div className="w-11 h-11 rounded-full border border-accent/40 flex items-center justify-center text-accent   transition-colors">
                   <Icon size={18} />
                 </div>
-                <span className="font-display text-ink/10 text-3xl group-hover:text-accent/30 transition-colors">{n}</span>
+                <span className="font-display text-ink/10 text-3xl  transition-colors">{n}</span>
               </div>
               <h3 className="font-display text-ink text-lg mb-2">{title}</h3>
               <p className="font-mono-ui text-[12px] leading-relaxed text-ink/55">{desc}</p>

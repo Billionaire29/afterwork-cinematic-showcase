@@ -1,13 +1,13 @@
 export const WhatsAppFloat = () => {
   const href =
-    "https://wa.me/917880420247?text=Hi%20The Rare Company!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F";
+"https://wa.me/917880420247?text=Hi%20The Rare Company!%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20discuss%20my%20project%3F";
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110"
+      className="fixed bottom-6 right-6 z-[9999] w-14 h-14 rounded-full flex items-center justify-center transition-transform duration-300 "
       style={{
         background: "#25D366",
         boxShadow: "0 4px 20px rgba(37, 211, 102, 0.5)",
