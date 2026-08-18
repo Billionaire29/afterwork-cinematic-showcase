@@ -14,15 +14,17 @@ const tickerItems = [
 
 export const Hero = () => {
   return (
-    <section id="top" className="relative min-h-screen w-full overflow-hidden grain flex flex-col">
-      {/* New cinematic aurora background */}
-      <div className="absolute inset-0 hero-aurora pointer-events-none" />
-      <div className="absolute inset-0 hero-grid-fade pointer-events-none" />
-
-      {/* Intensified orbs */}
-      <div className="orb" style={{ width: 680, height: 680, background: "#D81E36", opacity: 0.16, top: "-12%", right: "-10%" }} />
-      <div className="orb" style={{ width: 480, height: 480, background: "#0a0a0a", opacity: 0.05, bottom: "-8%", left: "-6%", animationDelay: "-7s" }} />
-      <div className="orb soft-pulse" style={{ width: 360, height: 360, background: "#D81E36", opacity: 0.12, top: "38%", left: "42%", animationDelay: "-10s" }} />
+    <section id="top" className="relative min-h-screen w-full overflow-hidden flex flex-col">
+      {/* Background GIF - full cover, no extra effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img
+          src="https://res.cloudinary.com/dp7avkarg/image/upload/v1787069815/a4f596911806a18ad72700c05c876773_pu8iqe.gif"
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Optional soft dark overlay for better text readability (remove if not needed) */}
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
       <div className="container flex-1 flex flex-col justify-center pt-28 pb-10 relative z-10">
         <motion.div
@@ -71,11 +73,11 @@ export const Hero = () => {
         >
           <a
             href="#work"
-            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-accent text-accent  font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
+            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-accent text-accent font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
           >
             See Our Work <ArrowUpRight size={12} />
           </a>
-          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-ink/60  transition-colors">
+          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-ink/60 transition-colors">
             or — start a project ↘
           </a>
         </motion.div>
