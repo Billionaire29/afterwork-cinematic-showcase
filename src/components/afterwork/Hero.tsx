@@ -1,16 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe, Smartphone, Search, Zap, Target, Scale, Gavel, FileText, Sparkles } from "lucide-react";
-
-const tickerItems = [
-  { Icon: Globe, label: "Web Development" },
-  { Icon: Smartphone, label: "App Development" },
-  { Icon: Zap, label: "IT Services" },
-  { Icon: Scale, label: "Legal Consultation" },
-  { Icon: Gavel, label: "Bail & FIR Matters" },
-  { Icon: FileText, label: "Legal Drafting" },
-  { Icon: Search, label: "SEO" },
-  { Icon: Target, label: "Brand Strategy" },
-];
+import { ArrowUpRight, Globe, Smartphone, Search, Zap, Target, Scale, Gavel, FileText } from "lucide-react";
 
 const floatingCards = [
   { label: "UI/UX Design", color: "bg-rose-100/80 text-rose-700" },
@@ -30,33 +19,9 @@ export const Hero = () => {
         {/* Top soft light */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FBF9F6] to-[#F8F4EF]" />
 
-        {/* Bottom premium multi-color glow (inspired by Golden Hour / HappyOps) */}
+        {/* Bottom premium multi-color glow */}
         <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-[#f0e6ff]/70 via-[#ffe4f1]/40 to-transparent" />
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[140%] h-[50%] rounded-[100%] bg-gradient-to-r from-violet-300/30 via-rose-300/25 to-amber-200/30 blur-3xl" />
-
-        {/* Very soft curved lines (Golden Hour style) */}
-        <svg
-          className="absolute inset-0 w-full h-full opacity-[0.12]"
-          viewBox="0 0 1440 900"
-          fill="none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M-100 200C200 120 500 280 800 180C1100 80 1400 220 1600 140"
-            stroke="#1a1a1a"
-            strokeWidth="1.2"
-          />
-          <path
-            d="M-100 320C250 240 550 400 850 300C1150 200 1450 340 1650 260"
-            stroke="#1a1a1a"
-            strokeWidth="1.2"
-          />
-          <path
-            d="M-100 450C300 370 600 530 900 430C1200 330 1500 470 1700 390"
-            stroke="#1a1a1a"
-            strokeWidth="1"
-          />
-        </svg>
       </div>
 
       {/* Main content */}
@@ -106,7 +71,7 @@ export const Hero = () => {
           </motion.p>
         </div>
 
-        {/* CTA + floating service pills */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,7 +98,7 @@ export const Hero = () => {
           </a>
         </motion.div>
 
-        {/* Floating cards row (inspired by EL Gallery + Graints) */}
+        {/* Floating cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,26 +118,6 @@ export const Hero = () => {
             </motion.div>
           ))}
         </motion.div>
-      </div>
-
-      {/* Premium Marquee */}
-      <div className="relative z-10 border-t border-neutral-200/70 bg-white/40 backdrop-blur-md py-4 overflow-hidden">
-        <div className="marquee-track whitespace-nowrap flex">
-          {Array.from({ length: 2 }).map((_, idx) => (
-            <div key={idx} className="flex items-center">
-              {tickerItems.map(({ Icon, label }) => (
-                <span
-                  key={label + idx}
-                  className="font-mono text-[12px] uppercase tracking-[0.2em] text-neutral-600 px-8 flex items-center gap-3"
-                >
-                  <Icon size={14} className="text-rose-500" strokeWidth={1.8} />
-                  {label}
-                  <span className="text-neutral-300 ml-1">✦</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
