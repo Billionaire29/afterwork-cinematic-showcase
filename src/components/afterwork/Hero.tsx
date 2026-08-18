@@ -18,7 +18,7 @@ export const Hero = () => {
       {/* Background GIF - full cover, no extra effects */}
       <div className="absolute inset-0 pointer-events-none">
         <img
-          src="https://res.cloudinary.com/dp7avkarg/image/upload/v1787069815/a4f596911806a18ad72700c05c876773_pu8iqe.gif"
+          src="https://res.cloudinary.com/dp7avkarg/image/upload/v1787069802/67c1299f033e0730776633ca5935f067_biwik0.gif"
           alt=""
           className="w-full h-full object-cover object-center"
         />
