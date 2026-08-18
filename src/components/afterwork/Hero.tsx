@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Globe, Smartphone, Search, Zap, Target, Scale, Gavel, FileText } from "lucide-react";
+import { ArrowUpRight, Globe, Smartphone, Search, Zap, Target, Scale, Gavel, FileText, Sparkles } from "lucide-react";
 
 const tickerItems = [
   { Icon: Globe, label: "Web Development" },
@@ -12,87 +12,162 @@ const tickerItems = [
   { Icon: Target, label: "Brand Strategy" },
 ];
 
+const floatingCards = [
+  { label: "UI/UX Design", color: "bg-rose-100/80 text-rose-700" },
+  { label: "Legal Tech", color: "bg-violet-100/80 text-violet-700" },
+  { label: "Product Strategy", color: "bg-sky-100/80 text-sky-700" },
+  { label: "Brand Systems", color: "bg-amber-100/80 text-amber-700" },
+];
+
 export const Hero = () => {
   return (
-    <section id="top" className="relative min-h-screen w-full overflow-hidden flex flex-col">
-      {/* Background GIF - full cover, no extra effects */}
+    <section
+      id="top"
+      className="relative min-h-screen w-full overflow-hidden flex flex-col bg-[#FBF9F6]"
+    >
+      {/* Soft ambient gradient background */}
       <div className="absolute inset-0 pointer-events-none">
-        <img
-          src="https://res.cloudinary.com/dp7avkarg/image/upload/v1787069802/67c1299f033e0730776633ca5935f067_biwik0.gif"
-          alt=""
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Optional soft dark overlay for better text readability (remove if not needed) */}
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Top soft light */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#FBF9F6] to-[#F8F4EF]" />
+
+        {/* Bottom premium multi-color glow (inspired by Golden Hour / HappyOps) */}
+        <div className="absolute bottom-0 left-0 right-0 h-[55%] bg-gradient-to-t from-[#f0e6ff]/70 via-[#ffe4f1]/40 to-transparent" />
+        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[140%] h-[50%] rounded-[100%] bg-gradient-to-r from-violet-300/30 via-rose-300/25 to-amber-200/30 blur-3xl" />
+
+        {/* Very soft curved lines (Golden Hour style) */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-[0.12]"
+          viewBox="0 0 1440 900"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M-100 200C200 120 500 280 800 180C1100 80 1400 220 1600 140"
+            stroke="#1a1a1a"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M-100 320C250 240 550 400 850 300C1150 200 1450 340 1650 260"
+            stroke="#1a1a1a"
+            strokeWidth="1.2"
+          />
+          <path
+            d="M-100 450C300 370 600 530 900 430C1200 330 1500 470 1700 390"
+            stroke="#1a1a1a"
+            strokeWidth="1"
+          />
+        </svg>
       </div>
 
-      <div className="container flex-1 flex flex-col justify-center pt-28 pb-10 relative z-10">
+      {/* Main content */}
+      <div className="container relative z-10 flex-1 flex flex-col justify-center pt-32 pb-16">
+        {/* Top label */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="font-mono-ui text-[9px] md:text-[11px] tracking-[0.15em] uppercase text-ink/50 mb-8 flex items-center gap-3"
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3 mb-10"
         >
-          <span className="w-5 h-px bg-accent" />
-          IT · Web · App · Legal — EST. 2022
+          <span className="w-8 h-px bg-neutral-400" />
+          <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-neutral-500">
+            IT · Web · App · Legal — Est. 2022
+          </span>
         </motion.div>
 
-        <h1 className="font-display h-hero text-ink">
-          <motion.span
-            initial={{ opacity: 0, y: 60 }}
+        {/* Headline */}
+        <div className="max-w-5xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="block"
+            className="font-display text-[clamp(2.8rem,7.5vw,6.2rem)] leading-[0.95] tracking-tight text-neutral-900"
           >
-            WE BUILD
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 60 }}
+            We Build
+            <br />
+            <span className="relative inline-block">
+              Rare Things
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -bottom-2 left-0 right-0 h-[3px] origin-left bg-gradient-to-r from-rose-400 via-violet-400 to-amber-300 rounded-full"
+              />
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="block text-shimmer"
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-8 max-w-xl text-lg md:text-xl text-neutral-600 leading-relaxed font-light"
           >
-            RARE THINGS.
-          </motion.span>
-        </h1>
+            Technology & law under one roof — crafted with precision, 
+            designed to feel rare, and built to last.
+          </motion.p>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-serif-italic t-sub text-ink/80 mt-8 max-w-2xl"
-        >
-          Technology and law, under one roof — built rare, done right.
-        </motion.p>
-
+        {/* CTA + floating service pills */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-12 flex items-center gap-4 md:gap-6 flex-wrap"
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="mt-12 flex flex-wrap items-center gap-5"
         >
           <a
             href="#work"
-            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-accent text-accent font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
+            className="group relative inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-neutral-900 text-white text-[13px] font-medium tracking-wide overflow-hidden transition-all hover:scale-[1.03] active:scale-[0.98]"
           >
-            See Our Work <ArrowUpRight size={12} />
+            <span className="relative z-10 flex items-center gap-2">
+              See Our Work
+              <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-500/20 via-violet-500/20 to-amber-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
-          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-ink/60 transition-colors">
-            or — start a project ↘
+
+          <a
+            href="#contact"
+            className="text-[13px] font-medium tracking-wide text-neutral-500 hover:text-neutral-800 transition-colors flex items-center gap-1.5"
+          >
+            Start a project
+            <span className="text-lg">↘</span>
           </a>
+        </motion.div>
+
+        {/* Floating cards row (inspired by EL Gallery + Graints) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-16 flex flex-wrap gap-3"
+        >
+          {floatingCards.map((card, i) => (
+            <motion.div
+              key={card.label}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 + i * 0.08 }}
+              whileHover={{ y: -4, scale: 1.03 }}
+              className={`px-5 py-2.5 rounded-full ${card.color} backdrop-blur-sm border border-white/60 shadow-sm text-[13px] font-medium tracking-wide`}
+            >
+              {card.label}
+            </motion.div>
+          ))}
         </motion.div>
       </div>
 
-      {/* Marquee strip */}
-      <div className="relative z-10 border-t border-ink/10 bg-ink/[0.03] py-3.5 overflow-hidden marquee-mask">
-        <div className="marquee-track whitespace-nowrap">
+      {/* Premium Marquee */}
+      <div className="relative z-10 border-t border-neutral-200/70 bg-white/40 backdrop-blur-md py-4 overflow-hidden">
+        <div className="marquee-track whitespace-nowrap flex">
           {Array.from({ length: 2 }).map((_, idx) => (
             <div key={idx} className="flex items-center">
               {tickerItems.map(({ Icon, label }) => (
-                <span key={label + idx} className="font-mono-ui t-marquee uppercase tracking-[0.18em] text-ink/70 px-7 flex items-center gap-3">
-                  <Icon size={14} color="#D81E36" strokeWidth={1.8} />
+                <span
+                  key={label + idx}
+                  className="font-mono text-[12px] uppercase tracking-[0.2em] text-neutral-600 px-8 flex items-center gap-3"
+                >
+                  <Icon size={14} className="text-rose-500" strokeWidth={1.8} />
                   {label}
-                  <span className="text-accent/70 ml-3">✳</span>
+                  <span className="text-neutral-300 ml-1">✦</span>
                 </span>
               ))}
             </div>
