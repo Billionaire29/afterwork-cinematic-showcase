@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ImageIcon } from "lucide-react";
 
 type Project = {
   name: string;
@@ -7,6 +7,8 @@ type Project = {
   host: string;
   blurb: string;
   tags: string[];
+  /** Drop a screenshot into src/assets and import it here later. */
+  image?: string;
 };
 
 const projects: Project[] = [
@@ -59,51 +61,49 @@ const Card = ({ p, i }: { p: Project; i: number }) => (
     href={p.url}
     target="_blank"
     rel="noreferrer"
-    initial={{ opacity: 0, y: 40 }}
+    initial={{ opacity: 0, y: 36 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
-    className="group relative flex flex-col glass rounded-[26px] overflow-hidden transition-all duration-500"
+    className="relative flex flex-col glass rounded-[28px] overflow-hidden"
   >
-    {/* Preview — square symmetric window */}
-    <div className="relative m-3 rounded-[18px] overflow-hidden bg-ink/[0.03] border border-ink/10" style={{ aspectRatio: "1 / 1" }}>
-      <div className="absolute inset-0 transition-transform duration-[1.5s] ease-out ">
-        <iframe
-          src={p.url}
-          title={p.name}
-          loading="lazy"
-          className="border-0"
-          style={{
-            transform: "scale(0.5)",
-            transformOrigin: "top left",
-            width: "200%",
-            height: "200%",
-            pointerEvents: "none",
-          }}
-        />
-      </div>
+    {/* Image slot — square, symmetric. Replace with a real screenshot later. */}
+    <div
+      className="relative m-3 rounded-[20px] overflow-hidden border border-ink/8 bg-gradient-to-br from-ink/[0.04] via-transparent to-accent/[0.06]"
+      style={{ aspectRatio: "1 / 1" }}
+    >
+      {p.image ? (
+        <img src={p.image} alt={`${p.name} website preview`} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+      ) : (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+          <span className="w-14 h-14 rounded-[18px] glass-red flex items-center justify-center text-accent">
+            <ImageIcon size={20} />
+          </span>
+          <span className="font-mono-ui text-[10px] tracking-[0.2em] uppercase text-ink/35">Image slot</span>
+        </div>
+      )}
 
-      <div className="absolute inset-x-0 top-0 h-9 flex items-center gap-1.5 px-3 bg-background/70 backdrop-blur-xl border-b border-ink/10">
+      <div className="absolute inset-x-0 top-0 h-10 flex items-center gap-1.5 px-4 bg-background/60 backdrop-blur-xl border-b border-ink/8">
         <span className="w-2 h-2 rounded-full bg-accent/70" />
-        <span className="w-2 h-2 rounded-full bg-ink/15" />
-        <span className="w-2 h-2 rounded-full bg-ink/15" />
-        <span className="ml-2 font-mono-ui text-[9px] tracking-[0.12em] text-ink/45 truncate">{p.host}</span>
+        <span className="w-2 h-2 rounded-full bg-ink/12" />
+        <span className="w-2 h-2 rounded-full bg-ink/12" />
+        <span className="ml-2 font-mono-ui text-[9.5px] tracking-[0.1em] text-ink/45 truncate">{p.host}</span>
       </div>
 
-      <span className="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent text-accent-foreground opacity-0 translate-y-2   transition-all duration-400">
+      <span className="absolute bottom-3 right-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-accent text-accent-foreground">
         <ArrowUpRight size={16} />
       </span>
     </div>
 
-    <div className="px-6 pb-6 pt-2 flex-1 flex flex-col">
+    <div className="px-6 pb-6 pt-2 flex-1 flex flex-col relative z-10">
       <div className="flex items-start justify-between gap-3">
         <h3 className="font-display t-card-title text-ink leading-tight">{p.name}</h3>
         <span className="font-mono-ui text-[10px] tracking-[0.15em] text-ink/30 pt-1">0{i + 1}</span>
       </div>
-      <p className="font-mono-ui text-[12.5px] leading-relaxed text-ink/55 mt-3">{p.blurb}</p>
-      <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-ink/10">
+      <p className="font-mono-ui text-[13.5px] leading-relaxed text-ink/55 mt-3">{p.blurb}</p>
+      <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-ink/8">
         {p.tags.map((t) => (
-          <span key={t} className="font-mono-ui text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border border-ink/15 text-ink/60   transition-colors">
+          <span key={t} className="font-mono-ui text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border border-ink/12 text-ink/55">
             {t}
           </span>
         ))}
@@ -120,9 +120,9 @@ export const Portfolio = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <div className="font-mono-ui t-label text-ink/40 mb-5 flex items-center gap-3">
-              <span className="w-6 h-px bg-accent" /> 02 — Selected portfolio
+              <span className="w-6 h-px bg-accent" /> 02 — Portfolio
             </div>
-            <h2 className="font-display h-section text-ink">SELECTED WORKS</h2>
+            <h2 className="font-display h-section text-ink">GOOD WORKS</h2>
           </div>
           <p className="font-serif-italic t-sub text-ink/55 max-w-md">
             Six live products. Every one of them shipped, used, and still running.
@@ -136,7 +136,7 @@ export const Portfolio = () => {
         </div>
 
         <p className="mt-10 font-mono-ui text-[11px] tracking-[0.18em] uppercase text-ink/40 flex items-center gap-2">
-          <span className="text-accent">✳</span> All projects are live — click any card to visit
+          <span className="text-accent">✳</span> All projects are live — tap any card to visit
         </p>
       </div>
     </section>

@@ -1,42 +1,61 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { Quote, Star } from "lucide-react";
 
-type T = { quote: string; name: string; role: string };
+type T = { quote: string; name: string; role: string; theme: "ink" | "light" | "red" };
 
 const items: T[] = [
   {
-    quote: "They built our NGO website with soul — it actually represents what we stand for. The animations, the warmth, everything. Truly exceptional.",
+    quote:
+      "They built our NGO website with soul — it actually represents what we stand for. The animations, the warmth, everything. Truly exceptional.",
     name: "Mr. Ram",
     role: "Jeevan Ki Nai Shuruaat NGO",
+    theme: "ink",
   },
   {
-    quote: "The Rare Company doesn't just build websites — they build experiences. Our conversion rate doubled after the redesign.",
+    quote:
+      "The Rare Company doesn't just build websites — they build experiences. Our conversion rate doubled after the redesign.",
     name: "Prince",
     role: "Founder, Startives",
+    theme: "light",
   },
   {
-    quote: "Working with the team was seamless. They understood our vision without us explaining twice. Delivered before deadline too.",
+    quote:
+      "Working with the team was seamless. They understood our vision without us explaining twice. Delivered before deadline too.",
     name: "Sumit",
     role: "Co-founder, Apives",
+    theme: "red",
   },
   {
-    quote: "The attention to detail is unreal. Every hover, every animation — it feels premium. Our clients notice it immediately.",
+    quote:
+      "The attention to detail is unreal. Every hover, every animation — it feels premium. Our clients notice it immediately.",
     name: "Ankit",
     role: "CEO, Ladamark",
+    theme: "light",
   },
 ];
+
+const themeClass = (t: T["theme"]) =>
+  t === "ink"
+    ? "glass-ink text-white"
+    : t === "red"
+    ? "glass glass-red text-ink"
+    : "glass text-ink";
 
 export const Testimonials = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 
-  const goTo = (i: number) => {
-    setActive(i);
+  const scrollTo = (i: number) => {
     const el = trackRef.current;
     if (!el) return;
     const card = el.children[i] as HTMLElement;
     if (card) el.scrollTo({ left: card.offsetLeft - 16, behavior: "smooth" });
+  };
+
+  const goTo = (i: number) => {
+    setActive(i);
+    scrollTo(i);
   };
 
   useEffect(() => {
@@ -50,12 +69,13 @@ export const Testimonials = () => {
         }
         return next;
       });
-    }, 5000);
+    }, 5200);
     return () => clearInterval(id);
   }, []);
 
   return (
     <section className="relative py-28 md:py-36 border-t border-ink/5 overflow-hidden">
+      <div className="absolute inset-0 spotlight pointer-events-none" />
       <div className="container relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
@@ -65,25 +85,23 @@ export const Testimonials = () => {
             <h2 className="font-display h-section text-ink">
               What <span className="text-accent">clients</span> are saying
             </h2>
-            <p className="font-serif-italic t-sub text-ink/60 mt-5 max-w-lg">
+            <p className="font-serif-italic t-sub text-ink/55 mt-5 max-w-lg">
               Real words from real people we've worked with.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
-            <a
-              href="#contact"
-              className="inline-flex items-center px-5 py-2.5 rounded-full border border-ink/20 text-ink font-mono-ui t-label   transition-colors"
-            >
-              Contact Us
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-accent text-background  transition-transform"
-              aria-label="Contact"
-            >
-              <ArrowUpRight size={18} />
-            </a>
+          <div className="glass rounded-[22px] px-6 py-5 flex items-center gap-4">
+            <div className="font-display text-ink text-4xl leading-none">4.9</div>
+            <div className="relative z-10">
+              <div className="flex gap-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={12} fill="#D01932" stroke="#D01932" />
+                ))}
+              </div>
+              <div className="font-mono-ui text-[10px] tracking-[0.18em] uppercase text-ink/45 mt-1.5">
+                Average client rating
+              </div>
+            </div>
           </div>
         </div>
 
@@ -98,17 +116,43 @@ export const Testimonials = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="snap-start shrink-0 w-[88%] md:w-[440px] relative rounded-[20px] p-7 border border-ink/10"
-              style={{ background: "rgba(255,255,255,0.05)" }}
+              transition={{ duration: 0.55, delay: i * 0.08 }}
+              className={`snap-start shrink-0 w-[86%] md:w-[430px] relative rounded-[28px] p-8 flex flex-col ${themeClass(t.theme)}`}
+              style={{ aspectRatio: "1 / 1" }}
             >
-              <span className="absolute top-5 right-5 w-2 h-2 rounded-full bg-accent soft-pulse" />
-              <p className="font-display-light italic text-ink/85 leading-relaxed" style={{ fontSize: 15 }}>
-"{t.quote}"
+              <div className="relative z-10 flex items-start justify-between">
+                <span
+                  className={`w-11 h-11 rounded-[16px] flex items-center justify-center ${
+                    t.theme === "ink" ? "bg-white/10 text-accent" : "bg-accent/10 text-accent"
+                  }`}
+                >
+                  <Quote size={17} />
+                </span>
+                <span className="font-mono-ui text-[10px] tracking-[0.2em] uppercase opacity-40">
+                  0{i + 1}
+                </span>
+              </div>
+
+              <p
+                className={`relative z-10 font-display-light leading-snug mt-8 flex-1 ${
+                  t.theme === "ink" ? "text-white/90" : "text-ink/85"
+                }`}
+                style={{ fontSize: "clamp(17px, 2vw, 21px)" }}
+              >
+                "{t.quote}"
               </p>
-              <div className="mt-7 pt-5 border-t border-ink/10">
-                <div className="font-display text-ink text-base">{t.name}</div>
-                <div className="font-mono-ui text-[11px] tracking-[0.12em] uppercase text-accent mt-1.5">{t.role}</div>
+
+              <div
+                className={`relative z-10 mt-6 pt-5 border-t ${
+                  t.theme === "ink" ? "border-white/12" : "border-ink/10"
+                }`}
+              >
+                <div className={`font-display text-base ${t.theme === "ink" ? "text-white" : "text-ink"}`}>
+                  {t.name}
+                </div>
+                <div className="font-mono-ui text-[11px] tracking-[0.14em] uppercase text-accent mt-1.5">
+                  {t.role}
+                </div>
               </div>
             </motion.article>
           ))}
@@ -121,9 +165,7 @@ export const Testimonials = () => {
               onClick={() => goTo(i)}
               aria-label={`Go to testimonial ${i + 1}`}
               className={`transition-all duration-300 rounded-full ${
-                active === i
-                  ? "w-3 h-3 bg-accent"
-                  : "w-2.5 h-2.5 border border-ink/40"
+                active === i ? "w-8 h-2.5 bg-accent" : "w-2.5 h-2.5 bg-ink/15"
               }`}
             />
           ))}
