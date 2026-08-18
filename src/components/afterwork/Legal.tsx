@@ -111,7 +111,7 @@ export const Legal = () => {
               {modes.map(({ Icon, label }) => (
                 <div
                   key={label}
-                  className="glass rounded-[18px] px-4 py-4 flex items-center gap-3 transition-transform duration-300 hover:-translate-y-1"
+                  className="glass rounded-[18px] px-4 py-4 flex items-center gap-3 transition-transform duration-300 "
                 >
                   <Icon size={16} className="text-accent shrink-0" />
                   <span className="font-mono-ui text-[12px] text-ink/75">{label}</span>
@@ -130,10 +130,10 @@ export const Legal = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
-              className="group glass rounded-[26px] p-6 md:p-7 transition-all duration-500 hover:-translate-y-2 hover:border-accent/50 hover:shadow-[0_34px_80px_-30px_rgba(216,30,54,0.4)]"
+              className="group glass rounded-[26px] p-6 md:p-7 transition-all duration-500"
             >
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-[14px] border border-accent/30 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <div className="w-11 h-11 rounded-[14px] border border-accent/30 flex items-center justify-center text-accent   transition-colors">
                   <Icon size={18} />
                 </div>
                 <span className="font-mono-ui text-[10px] tracking-[0.15em] text-ink/25">

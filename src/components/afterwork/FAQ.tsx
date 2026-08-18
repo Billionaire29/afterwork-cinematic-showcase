@@ -52,7 +52,7 @@ export const FAQ = () => {
         </div>
 
         {/* Trust badge */}
-        <div className="glass rounded-2xl p-5 md:p-6 mb-10 flex items-center justify-between gap-6 transition-all duration-500 hover:border-accent/40 hover:shadow-[0_20px_60px_-20px_rgba(216,30,54,0.3)]">
+        <div className="glass rounded-2xl p-5 md:p-6 mb-10 flex items-center justify-between gap-6 transition-all duration-500">
           <div className="flex items-center gap-4">
             <div className="font-display text-ink text-5xl md:text-6xl leading-none">4.9</div>
             <Star size={28} fill="#D81E36" stroke="#D81E36" />

@@ -56,13 +56,13 @@ export const Contact = () => {
           <div className="flex flex-wrap gap-3 mt-10">
             <a
               href="mailto:hello@therarecompany.in"
-              className="btn-sweep btn-sweep-dark inline-flex items-center px-6 py-3 rounded-full bg-accent text-background font-mono-ui t-label hover:text-accent"
+              className="btn-sweep btn-sweep-dark inline-flex items-center px-6 py-3 rounded-full bg-accent text-background font-mono-ui t-label "
             >
               Start a Project →
             </a>
             <a
               href="#work"
-              className="btn-sweep inline-flex items-center px-6 py-3 rounded-full border border-ink/30 text-ink hover:text-background font-mono-ui t-label"
+              className="btn-sweep inline-flex items-center px-6 py-3 rounded-full border border-ink/30 text-ink  font-mono-ui t-label"
             >
               View All Work
             </a>
@@ -73,11 +73,11 @@ export const Contact = () => {
               <a
                 key={label}
                 href={href}
-                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-ink/60 hover:text-accent transition-all duration-300"
+                className="group inline-flex items-center gap-2 font-mono-ui text-[12px] uppercase tracking-[0.18em] text-ink/60  transition-all duration-300"
               >
-                <Icon size={14} color="#D81E36" className="transition-transform group-hover:scale-110" />
+                <Icon size={14} color="#D81E36" className="transition-transform " />
                 {label}
-                <ArrowUpRight size={12} className="text-accent opacity-70 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight size={12} className="text-accent opacity-70 transition-transform" />
               </a>
             ))}
           </div>

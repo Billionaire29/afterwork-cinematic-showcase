@@ -71,11 +71,11 @@ export const Hero = () => {
         >
           <a
             href="#work"
-            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-accent text-accent hover:text-background font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
+            className="btn-sweep inline-flex items-center gap-2 px-4 py-2.5 md:px-6 md:py-3 rounded-full border border-accent text-accent  font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase"
           >
             See Our Work <ArrowUpRight size={12} />
           </a>
-          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-ink/60 hover:text-accent transition-colors">
+          <a href="#contact" className="font-mono-ui text-[10px] md:text-[11px] tracking-[0.15em] uppercase text-ink/60  transition-colors">
             or — start a project ↘
           </a>
         </motion.div>
